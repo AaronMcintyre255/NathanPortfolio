@@ -1,0 +1,44 @@
+@import "./../variables.css";
+
+#about-hero-section {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: var(--light-greyish-blue);
+    height: 70vh;
+    margin: 10vw;
+    padding: 2vw; 
+    font-family: "Inter";
+    border-radius: 20px;
+}
+
+#about-hero-content {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    flex: 1; 
+    color: var(--jet-black); 
+}
+
+#about-hero-title {
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+}
+
+#about-hero-description {
+    font-size: 1.5rem; 
+    line-height: 1.5; 
+}
+
+#about-hero-image {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#about-hero-image img {
+    max-width: 80%; 
+    max-height: 80%; 
+    object-fit: cover;
+}

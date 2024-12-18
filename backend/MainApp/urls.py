@@ -1,7 +1,6 @@
 from django.urls import path
-from . import views
-
+from .views import VideoListAPIView
 
 urlpatterns = [
-    # path('', ),
+    path('api/videos/', VideoListAPIView.as_view(), name='video-list'),
 ]

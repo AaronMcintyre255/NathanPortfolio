@@ -1,0 +1,22 @@
+@import "./../variables.css";
+
+
+footer { 
+    background-color: var(--jet-black);
+    padding:10px;
+    bottom:0;
+}
+#footer-list {
+    display: flex;
+    
+}
+.footer-list-element{
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+}
+
+.footer-icons:hover {
+    fill: var(--dark-grey);
+}
+

@@ -5,11 +5,18 @@ class ImagePortfolio(models.Model):
     image_title = models.CharField(max_length=100)
     image_description = models.TextField()
     
+    def __str__(self):
+        return self.name
+    
     
 class VideoPorfolio(models.Model):
     video_url = models.URLField
-    video_title = models.CharField(max_length=100)
+    video_title = models.CharField(max_length=255)
     video_description = models.TextField()
+    video_thumbnail = models.URLField(blank=True, null=True)
+    
+    def __str__(self):
+        return self.video_title
     
 
     

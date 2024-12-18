@@ -1,0 +1,116 @@
+@import "./../variables.css";
+
+nav {
+    position: sticky;
+    top: 0;
+    margin: auto;
+    padding: 10px;
+}
+
+#nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.nav-list-element {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin: 0 16px;
+    border-radius: 30px;
+    width: 180px; 
+    height: 50px; 
+    font-size: 16px;
+    font-family: "Inter";
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: all 0.3s ease; 
+    color: var(--off-white);
+}
+
+
+.nav-list-element a {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; 
+    color: inherit; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: inherit; 
+}
+
+/* Individual button styles */
+#nav-home-button {
+    background-color: #D32F2F;
+    border-bottom: 5px solid #A00000;
+    border-right: 5px solid #A00000;
+}
+
+#nav-home-button:hover {
+    border-width: 0;
+}
+
+#nav-portfolio-button {
+    background-color: #4169E1;
+    border-bottom: 5px solid #324FB3;
+    border-right: 5px solid #324FB3;
+}
+
+#nav-portfolio-button:hover {
+    border-width: 0;
+}
+
+#nav-teaching-resources-button {
+    background-color: #32CD32;
+    border-bottom: 5px solid #259925;
+    border-right: 5px solid #259925;
+}
+
+#nav-teaching-resources-button:hover {
+    border-width: 0;
+}
+
+#nav-about-button {
+    background-color: #FFBF00;
+    border-bottom: 5px solid #CC9900;
+    border-right: 5px solid #CC9900;
+}
+
+#nav-about-button:hover {
+    border-width: 0;
+}
+
+/* Active element styles */
+.nav-list-element.active {
+    font-weight: bold;
+    
+    color: var(--dark-grey);
+    border-bottom: 2px solid #ffbf00; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); 
+}
+
+#nav-home-button.active {
+    background-color: #C62828; 
+    border-bottom: 5px solid #A83232; 
+  }
+  
+  #nav-portfolio-button.active {
+    background-color: #4A76E5; 
+    border-bottom: 5px solid #3B5EC2; 
+  }
+  
+  #nav-teaching-resources-button.active {
+    background-color: #39D639; 
+    border-bottom: 5px solid #2EBF2E; 
+  }
+  
+  #nav-about-button.active {
+    background-color: #FFCC33; 
+    border-bottom: 5px solid #DDAA22; 
+  }
+

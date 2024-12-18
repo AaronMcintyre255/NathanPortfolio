@@ -20,9 +20,4 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mainapp/', include('MainApp.urls')),
-    # path('teaching_resources'),
-    # path('video_portfolio'),
-    # path('image_portfolio'),
-    # path('biography'),
-    # path(''),
 ]
