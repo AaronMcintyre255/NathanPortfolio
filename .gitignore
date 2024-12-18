@@ -17,3 +17,11 @@ __pycache__/
 
 # Ignore logs
 *.log
+
+# Build outputs
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
