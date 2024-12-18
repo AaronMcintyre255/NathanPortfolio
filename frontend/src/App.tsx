@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Portfolio from "./pages/Portfolio";
+import VideoPortfolio from "./pages/VideoPortfolio";
 import Teaching_Resources from "./pages/Teaching_Resources";
 
 const App: React.FC = () => {
@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/video_portfolio" element={<VideoPortfolio />} />
           <Route path="/teaching_resources" element={<Teaching_Resources />} />
         </Routes>
       </Router>

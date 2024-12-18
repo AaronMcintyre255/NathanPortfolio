@@ -11,7 +11,10 @@ const About: React.FC = () => {
         </div>
 
         <div id="about-hero-image">
-          <img src="/profile_picture.svg" alt="Image of Nathan McLaughlin" />
+          <img
+            src="/thumbnail-placeholder.jpg"
+            alt="Image of Nathan McLaughlin"
+          />
         </div>
       </div>
     </>

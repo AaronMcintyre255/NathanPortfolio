@@ -30,7 +30,7 @@ body {
   font-family: "Inter";
   color: var(--jet-black); 
   margin: 0; 
-  animation: bounceIn 1.2s ease;
+  animation: bounceIn 2s ease;
 }
 
 

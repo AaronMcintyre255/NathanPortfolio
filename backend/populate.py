@@ -11,28 +11,52 @@ from MainApp.models import VideoPortfolio
 # Sample video data
 videos = [
     {
-        'video_url': 'https://example.com/video1',
-        'video_title': 'Sample Video 1',
-        'video_description': 'This is the description for Sample Video 1.',
-        'video_thumbnail': 'https://example.com/thumbnail1.jpg'
-    },
-    {
-        'video_url': 'https://example.com/video2',
-        'video_title': 'Sample Video 2',
-        'video_description': 'This is the description for Sample Video 2.',
-        'video_thumbnail': 'https://example.com/thumbnail2.jpg'
-    },
-    {
-        'video_url': 'https://example.com/video3',
-        'video_title': 'Sample Video 3',
-        'video_description': 'This is the description for Sample Video 3.',
-        'video_thumbnail': 'https://example.com/thumbnail3.jpg'
+        'video_url': 'https://example.com/video4',
+        'video_title': 'Sample Video 4',
+        'video_description': 'This is the description for Sample Video 4.',
+        
     },
     {
         'video_url': 'https://example.com/video4',
         'video_title': 'Sample Video 4',
         'video_description': 'This is the description for Sample Video 4.',
-        'video_thumbnail': 'https://example.com/thumbnail4.jpg'
+        
+    },
+    {
+        'video_url': 'https://example.com/video4',
+        'video_title': 'Sample Video 4',
+        'video_description': 'This is the description for Sample Video 4.',
+        
+    },
+    {
+        'video_url': 'https://example.com/video4',
+        'video_title': 'Sample Video 4',
+        'video_description': 'This is the description for Sample Video 4.',
+        
+    },
+    {
+        'video_url': 'https://example.com/video4',
+        'video_title': 'Sample Video 4',
+        'video_description': 'This is the description for Sample Video 4.',
+        
+    },
+    {
+        'video_url': 'https://example.com/video4',
+        'video_title': 'Sample Video 4',
+        'video_description': 'This is the description for Sample Video 4.',
+        
+    },
+    {
+        'video_url': 'https://example.com/video4',
+        'video_title': 'Sample Video 4',
+        'video_description': 'This is the description for Sample Video 4.',
+        
+    },
+    {
+        'video_url': 'https://example.com/video4',
+        'video_title': 'Sample Video 4',
+        'video_description': 'This is the description for Sample Video 4.',
+        
     }
 ]
 

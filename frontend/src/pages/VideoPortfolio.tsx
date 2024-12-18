@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./video_portfolio.css";
 
 // Define the type for a single video
 interface VideoPortfolio {
@@ -10,7 +11,7 @@ interface VideoPortfolio {
   video_thumbnail: string | null;
 }
 
-const Portfolio: React.FC = () => {
+const VideoPortfolio: React.FC = () => {
   const [videos, setVideos] = useState<VideoPortfolio[]>([]); // Array of VideoPortfolio objects
   const [loading, setLoading] = useState<boolean>(true); // Boolean to track loading state
   const [error, setError] = useState<string | null>(null); // Error state for handling any issues
@@ -52,7 +53,7 @@ const Portfolio: React.FC = () => {
         videos.map((video) => (
           <div key={video.id} className="video-card">
             <img
-              src={video.video_thumbnail || "placeholder-thumbnail.jpg"} // Use placeholder if no thumbnail
+              src={video.video_thumbnail || "/thumbnail-placeholder.jpg"} // Use placeholder if no thumbnail
               alt={video.video_title}
               className="video-thumbnail"
             />
@@ -70,4 +71,4 @@ const Portfolio: React.FC = () => {
   );
 };
 
-export default Portfolio;
+export default VideoPortfolio;
