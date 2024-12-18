@@ -9,8 +9,8 @@ class ImagePortfolio(models.Model):
         return self.name
     
     
-class VideoPorfolio(models.Model):
-    video_url = models.URLField
+class VideoPortfolio(models.Model):
+    video_url = models.URLField(blank=True, null=True)
     video_title = models.CharField(max_length=255)
     video_description = models.TextField()
     video_thumbnail = models.URLField(blank=True, null=True)
