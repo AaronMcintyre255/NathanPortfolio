@@ -3,5 +3,10 @@
   --jet-black: #2C2C2C;
   --dark-grey: #A9A9A9;
   --light-greyish-blue: #E9ECEF;
-
+  --default-line-color: #e0e0e0;
+  --home-button-color: #ff5733;
+  --about-button-color: #ffc300;
+  --portfolio-button-color: #33c1ff;
+  --resources-button-color: #75ff33;
+  --contact-button-color: #8e44ad;
 }

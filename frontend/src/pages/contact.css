@@ -1,0 +1,5 @@
+@import "./contact.css";
+
+#content-input-box {
+    resize: none
+}

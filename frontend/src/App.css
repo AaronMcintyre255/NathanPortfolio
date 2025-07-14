@@ -1,0 +1,25 @@
+#page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+#content-wrap {
+  flex: 1;
+  z-index: 0;
+}
+
+footer {
+  width: 100%;
+}
+
+#svg-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}

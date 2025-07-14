@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--light-greyish-blue);
+  z-index: 5;
   height: 70vh;
   margin: 10vw;
   padding: 2vw;
@@ -23,6 +24,23 @@
 #about-hero-title {
   font-size: 3vw;
   margin-bottom: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  /* Enable positioning for the pseudo-element cursor */
+  animation: typewriter 6s steps(34, end) infinite;
+}
+
+#about-hero-title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--jet-black);
+  animation: blink 0.5s step-end infinite;
 }
 
 #about-hero-description {
@@ -37,8 +55,34 @@
 }
 
 #about-hero-image img {
-  max-width: 80%; 
-  height: auto;     
-  object-fit: cover; 
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
   border-radius: 20px;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+
+  90% {
+    width: 75%;
+  }
+
+  100% {
+    width: 75%;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }

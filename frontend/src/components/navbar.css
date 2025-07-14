@@ -1,116 +1,600 @@
-@import "./../variables.css";
-
 nav {
-    position: sticky;
-    top: 0;
-    margin: auto;
-    padding: 10px;
+  position: sticky;
+  top: 10px;
+  margin: auto;
+  padding: 10px;
+  z-index: 5;
 }
 
 #nav-list {
-    display: flex;
-    justify-content: center;
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+span {
+  z-index: 20;
+}
+
+.resources-dropdown .resources-dropdown-item span {
+  position: relative;
+  z-index: 1;
 }
 
 .nav-list-element {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    margin: 0 16px;
-    border-radius: 30px;
-    width: 180px; 
-    height: 50px; 
-    font-size: 16px;
-    font-family: "Inter";
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: all 0.3s ease; 
-    color: var(--off-white);
-}
-
-
-.nav-list-element a {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    text-decoration: none; 
-    color: inherit; 
-    width: 100%; 
-    height: 100%; 
-    border-radius: inherit; 
-}
-
-/* Individual button styles */
-#nav-home-button {
-    background-color: #D32F2F;
-    border-bottom: 5px solid #A00000;
-    border-right: 5px solid #A00000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 16px;
+  border-radius: 30px;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  font-family: "Inter";
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--off-white);
 }
 
 #nav-home-button:hover {
-    border-width: 0;
-}
-
-#nav-portfolio-button {
-    background-color: #4169E1;
-    border-bottom: 5px solid #324FB3;
-    border-right: 5px solid #324FB3;
-}
-
-#nav-portfolio-button:hover {
-    border-width: 0;
-}
-
-#nav-teaching-resources-button {
-    background-color: #32CD32;
-    border-bottom: 5px solid #259925;
-    border-right: 5px solid #259925;
-}
-
-#nav-teaching-resources-button:hover {
-    border-width: 0;
-}
-
-#nav-about-button {
-    background-color: #FFBF00;
-    border-bottom: 5px solid #CC9900;
-    border-right: 5px solid #CC9900;
+  animation: pulse-tilt-effect 2s ease infinite, move-gradient 6s infinite linear;
 }
 
 #nav-about-button:hover {
-    border-width: 0;
+  animation: pulse-tilt-effect 2s ease infinite, move-gradient 6s infinite linear;
 }
 
-/* Active element styles */
-.nav-list-element.active {
-    font-weight: bold;
-    
-    color: var(--dark-grey);
-    border-bottom: 2px solid #ffbf00; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); 
+#nav-contact-button:hover {
+  animation: pulse-tilt-effect 2s ease infinite, move-gradient 6s infinite linear;
 }
 
-#nav-home-button.active {
-    background-color: #C62828; 
-    border-bottom: 5px solid #A83232; 
-  }
-  
-  #nav-portfolio-button.active {
-    background-color: #4A76E5; 
-    border-bottom: 5px solid #3B5EC2; 
-  }
-  
-  #nav-teaching-resources-button.active {
-    background-color: #39D639; 
-    border-bottom: 5px solid #2EBF2E; 
-  }
-  
-  #nav-about-button.active {
-    background-color: #FFCC33; 
-    border-bottom: 5px solid #DDAA22; 
+.dropdown-item:hover {
+  animation: pulse-tilt-effect 2s infinite;
+  background: linear-gradient(45deg, #66BB6A, #81C784);
+}
+
+.portfolio-dropdown-item:hover {
+  animation: pulse-tilt-effect 2s ease infinite, move-gradient 6s infinite linear;
+}
+
+.portfolio-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  z-index: 10000;
+}
+
+.portfolio-dropdown-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  margin-top: 12px;
+  padding: 0;
+  border-radius: 30px;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  font-family: "Inter";
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--off-white);
+  font-weight: bold;
+  background: linear-gradient(45deg, #00c6ff, #0072ff, #0056b3);
+  border: 2px solid #0072ff;
+  background-size: 200% 200%;
+  animation: move-gradient 6s infinite linear;
+  overflow: hidden;
+}
+
+.portfolio-dropdown-item a,
+.resources-dropdown-item a {
+  display: flex;
+  /* Makes the link a flex container */
+  justify-content: center;
+  /* Centers text horizontally */
+  align-items: center;
+  /* Centers text vertically */
+  width: 100%;
+  /* Ensures the link spans the full width of the parent */
+  height: 100%;
+  /* Ensures the link spans the full height of the parent */
+  text-decoration: none;
+  /* Removes default link underlines */
+  color: inherit;
+  /* Ensures the link inherits color */
+}
+
+
+.portfolio-dropdown-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+
+  border-radius: inherit;
+  clip-path: polygon(0% 60%, 10% 65%, 20% 58%, 30% 62%, 40% 55%,
+      50% 60%, 60% 57%, 70% 63%, 80% 55%, 90% 60%,
+      100% 58%, 100% 100%, 0% 100%);
+  animation: wave-animation 3s infinite ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#nav-home-button {
+  position: relative;
+  display: flex;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff4500, #ff8c00, #ff0000);
+  border: 2px solid #ff4500;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(255, 69, 0, 0.8), 0 0 8px rgba(255, 140, 0, 0.6);
+  text-shadow: 0 0 8px rgba(255, 140, 0, 0.9), 0 0 20px rgba(255, 69, 0, 0.8);
+  animation: move-gradient 6s infinite linear;
+  overflow: hidden;
+  background-size: 300% 300%;
+}
+
+#nav-about-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #FFD54F, #FFA000);
+  border: 2px solid #FFAA00;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 200, 0, 0.6), 0 0 30px rgba(255, 180, 0, 0.4);
+  overflow: hidden;
+  background-size: 300% 300%;
+  animation: move-gradient 6s infinite linear;
+  border-radius: 30px;
+}
+
+#nav-portfolio-button {
+  position: relative;
+  font-weight: bold;
+  background: linear-gradient(45deg, #00c6ff, #0072ff, #0056b3);
+  border: 2px solid #0072ff;
+  cursor: pointer;
+  background-size: 300% 300%;
+  animation: move-gradient 6s infinite linear;
+  box-shadow: 0 0 5px rgba(0, 144, 255, 0.6), 0 0 10px rgba(0, 144, 255, 0.4), 0 0 20px rgba(0, 128, 255, 0.2);
+  z-index: 10;
+}
+
+#nav-portfolio-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  mix-blend-mode: overlay;
+  border-radius: inherit;
+  clip-path: polygon(0% 60%, 10% 65%, 20% 58%, 30% 62%, 40% 55%,
+      50% 60%, 60% 57%, 70% 63%, 80% 55%, 90% 60%,
+      100% 58%, 100% 100%, 0% 100%);
+  animation: wave-animation 3s infinite ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#nav-teaching-resources-button {
+  position: relative;
+  font-weight: bold;
+  background: linear-gradient(45deg, #2E7D32, #388E3C);
+  border: 2px solid #2E7D32;
+  cursor: pointer;
+  animation: move-gradient 6s infinite linear;
+  box-shadow: 0 0 4px rgba(46, 125, 50, 0.8), 0 0 8px rgba(56, 142, 60, 0.6);
+}
+
+#nav-teaching-resources-button:hover .resources-dropdown {
+  display: block;
+}
+
+.resources-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 180px;
+  padding: 10px 0;
+  background: transparent;
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.resources-dropdown .resources-dropdown-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5px 0;
+  border-radius: 30px;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  font-family: "Inter";
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--off-white);
+  font-weight: bold;
+  background: linear-gradient(45deg, #2E7D32, #388E3C);
+  border: 2px solid #2E7D32;
+  animation: move-gradient 6s infinite linear;
+  overflow: hidden;
+}
+
+.resources-dropdown .resources-dropdown-item:hover {
+  animation: pulse-tilt-effect 2s infinite;
+}
+
+#nav-portfolio-button:hover .portfolio-dropdown,
+.portfolio-dropdown:hover {
+  display: block;
+}
+
+#nav-contact-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #4a0072, #8e44ad, #6a0dad);
+  border: 2px solid #8e44ad;
+  cursor: pointer;
+  animation: move-gradient 6s infinite linear;
+  overflow: hidden;
+  background-size: 300% 300%;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.5), 0 0 25px rgba(186, 85, 211, 0.3);
+}
+
+.resources-dropdown .resources-dropdown-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #4CAF50, #66BB6A);
+  clip-path: polygon(0% 100%,
+      20% 50%,
+      40% 30%,
+      80% 50%,
+      100% 100%);
+  z-index: 0;
+  pointer-events: none;
+  animation: hill-shift 6s infinite ease-in-out;
+  border-radius: inherit;
+}
+
+@keyframes move-gradient {
+  0% {
+    background-position: 0% 50%;
   }
 
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-tilt-effect {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.05) rotate(2deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(-2deg);
+  }
+
+  75% {
+    transform: scale(1.05) rotate(2deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    clip-path: polygon(0% 60%, 10% 65%, 20% 58%, 30% 62%, 40% 55%,
+        50% 60%, 60% 57%, 70% 63%, 80% 55%, 90% 60%,
+        100% 58%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 63%, 10% 60%, 20% 62%, 30% 58%, 40% 63%,
+        50% 55%, 60% 62%, 70% 57%, 80% 60%, 90% 58%,
+        100% 63%, 100% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0% 60%, 10% 65%, 20% 58%, 30% 62%, 40% 55%,
+        50% 60%, 60% 57%, 70% 63%, 80% 55%, 90% 60%,
+        100% 58%, 100% 100%, 0% 100%);
+  }
+}
+
+#nav-teaching-resources-button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #4CAF50, #66BB6A);
+  clip-path: polygon(0% 100%,
+      20% 50%,
+      40% 30%,
+      80% 50%,
+      100% 100%);
+  z-index: 0;
+  pointer-events: none;
+  animation: hill-shift 6s infinite ease-in-out;
+  border-radius: inherit;
+}
+
+@keyframes hill-shift {
+
+  0%,
+  100% {
+    clip-path: polygon(0% 100%,
+        20% 50%,
+        40% 30%,
+        80% 50%,
+        100% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 100%,
+        25% 55%,
+        45% 35%,
+        75% 55%,
+        100% 100%);
+  }
+}
+
+/* Fire Animation for Home Button */
+#nav-home-button {
+  position: relative;
+  display: flex;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff4500, #ff8c00, #ff0000);
+  border: 2px solid #ff4500;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(255, 69, 0, 0.8), 0 0 8px rgba(255, 140, 0, 0.6);
+  text-shadow: 0 0 8px rgba(255, 140, 0, 0.9), 0 0 20px rgba(255, 69, 0, 0.8);
+  animation: move-gradient 6s infinite linear;
+  overflow: hidden;
+  background-size: 300% 300%;
+}
+
+#nav-home-button::before,
+#nav-home-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255, 255, 128, 0.8), rgba(255, 69, 0, 0.8), rgba(255, 165, 0, 0.6));
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: flame-multi 2.5s infinite ease-in-out;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  box-shadow: 0 0 10px rgba(255, 200, 0, 0.6), 0 0 20px rgba(255, 69, 0, 0.8);
+}
+
+#nav-home-button::after {
+  animation-delay: 1.25s;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), rgba(255, 140, 0, 0.7), rgba(255, 69, 0, 0.6));
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.5), 0 0 30px rgba(255, 140, 0, 0.7);
+}
+
+@keyframes flame-multi {
+  0% {
+    clip-path: polygon(0% 70%, 7% 35%, 12% 60%, 20% 30%, 30% 55%,
+        40% 25%, 50% 45%, 60% 20%, 70% 40%, 80% 15%,
+        90% 35%, 100% 70%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 75%, 5% 40%, 15% 65%, 25% 25%, 35% 60%,
+        45% 20%, 55% 50%, 65% 30%, 75% 45%, 85% 10%,
+        95% 50%, 100% 75%, 100% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0% 70%, 7% 35%, 12% 60%, 20% 30%, 30% 55%,
+        40% 25%, 50% 45%, 60% 20%, 70% 40%, 80% 15%,
+        90% 35%, 100% 70%, 100% 100%, 0% 100%);
+  }
+}
+
+/* Electric Animation for About Button */
+#nav-about-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #FFD54F, #FFA000);
+  border: 2px solid #FFAA00;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 200, 0, 0.6), 0 0 30px rgba(255, 180, 0, 0.4);
+  overflow: hidden;
+  background-size: 300% 300%;
+  animation: move-gradient 6s infinite linear;
+  border-radius: 30px;
+}
+
+#nav-about-button::before,
+#nav-about-button::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  width: 10%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.8);
+  clip-path: polygon(50% 0%, 55% 10%, 45% 15%, 60% 25%, 40% 30%,
+      65% 50%, 35% 55%, 70% 70%, 30% 75%, 80% 100%,
+      20% 100%, 50% 0%);
+  animation: random-strike 3s infinite ease-in-out;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#nav-about-button::after {
+  left: 75%;
+  animation-delay: 1.5s;
+}
+
+#nav-about-button::before {
+  left: 25%;
+  animation-delay: 0.5s;
+}
+
+@keyframes random-strike {
+
+  0%,
+  90% {
+    opacity: 0;
+    transform: translateX(0) translateY(-10%);
+  }
+
+  91% {
+    opacity: 1;
+    transform: translateX(-5%) translateY(0);
+  }
+
+  92% {
+    opacity: 1;
+    transform: translateX(5%) translateY(50%);
+  }
+
+  93%,
+  100% {
+    opacity: 0;
+    transform: translateX(0) translateY(120%);
+  }
+}
+
+/* Crystal Animation for Contact Button */
+#nav-contact-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #4a0072, #8e44ad, #6a0dad);
+  border: 2px solid #8e44ad;
+  cursor: pointer;
+  animation: move-gradient 6s infinite linear;
+  overflow: hidden;
+  background-size: 300% 300%;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.5), 0 0 25px rgba(186, 85, 211, 0.3);
+}
+
+#nav-contact-button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3), transparent 70%);
+  clip-path: polygon(10% 90%, 15% 60%, 20% 75%, 25% 50%, 30% 80%, 35% 55%,
+      40% 70%, 45% 50%, 50% 65%, 55% 45%, 60% 60%, 65% 50%,
+      70% 70%, 75% 55%, 80% 80%, 85% 60%, 90% 90%, 95% 75%,
+      100% 100%, 0% 100%);
+  animation: potion-bubbles 4s infinite ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+#nav-contact-button::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 60%);
+  clip-path: polygon(10% 20%, 20% 25%, 30% 15%, 40% 20%, 50% 10%,
+      60% 15%, 70% 25%, 80% 20%, 90% 30%, 100% 25%,
+      90% 60%, 10% 60%);
+  animation: magic-swirls 6s infinite linear;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@keyframes potion-bubbles {
+
+  0%,
+  100% {
+    clip-path: polygon(10% 90%, 15% 60%, 20% 75%, 25% 50%, 30% 80%, 35% 55%,
+        40% 70%, 45% 50%, 50% 65%, 55% 45%, 60% 60%, 65% 50%,
+        70% 70%, 75% 55%, 80% 80%, 85% 60%, 90% 90%, 95% 75%,
+        100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(10% 85%, 15% 55%, 20% 70%, 25% 45%, 30% 75%, 35% 50%,
+        40% 65%, 45% 45%, 50% 60%, 55% 40%, 60% 55%, 65% 45%,
+        70% 65%, 75% 50%, 80% 75%, 85% 55%, 90% 85%, 95% 70%,
+        100% 95%, 0% 95%);
+  }
+}
+
+@keyframes magic-swirls {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translate(-5%, -5%) rotate(15deg);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translate(5%, 5%) rotate(30deg);
+    opacity: 0.6;
+  }
+}
